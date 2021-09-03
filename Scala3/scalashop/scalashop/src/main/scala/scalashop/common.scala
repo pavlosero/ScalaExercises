@@ -35,35 +35,50 @@ class Img(val width: Int, val height: Int, private val data: Array[RGBA]):
   def this(w: Int, h: Int) = this(w, h, new Array(w * h))
   def apply(x: Int, y: Int): RGBA = data(y * width + x)
   def update(x: Int, y: Int, c: RGBA): Unit = data(y * width + x) = c
+  override def toString(): String = {
+    var str = ""
+    for (i <- 0 until width; j <- 0 until height) {
+      str += s"${this(i,j)} "
+      if (j == width-1) str+= "\n"
+    }
+    str
+  }
 
 /** Computes the blurred RGBA value of a single pixel of the input image. */
 def boxBlurKernel(src: Img, x: Int, y: Int, radius: Int): RGBA =
-  var i = x-radius
+  if (radius == 0)
+    src(x,y)
+  else{
+    var i = clamp(x-radius, 0, src.width - 1)
 
-  var avgR = 0
-  var avgG = 0
-  var avgB = 0
-  var avgA = 0
-  while (i<x+radius)
-    var j = y-radius
-    while (j<y+radius)
-      val validI = clamp(i, 0, src.width-1)
-      val validJ = clamp(j, 0, src.height-1)
-      val pixel = src(validI, validJ)
-      avgR += red(pixel)
-      avgG += green(pixel)
-      avgB += blue(pixel)
-      avgA += alpha(pixel)
-      j += 1
-    i += 1
+    val endI = clamp(x+radius, 0, src.width - 1)
+    val endJ = clamp(y+radius, 0, src.height - 1)
+    var nPixels = 0
+    var avgR = 0
+    var avgG = 0
+    var avgB = 0
+    var avgA = 0
 
 
-  val nPixels = (math.pow((2*radius+1), 2)).toInt
-  avgR /= nPixels
-  avgG /= nPixels
-  avgB /= nPixels
-  avgA /= nPixels
-  rgba(avgR, avgG, avgB, avgA)
+    while (i<=endI)
+      var j = clamp(y-radius, 0, src.height - 1)
+      while (j<=endJ)
+        val pixel = src(i, j)
+        avgR += red(pixel)
+        avgG += green(pixel)
+        avgB += blue(pixel)
+        avgA += alpha(pixel)
+        nPixels += 1
+        j += 1
+      i += 1
+
+    avgR /= nPixels
+    avgG /= nPixels
+    avgB /= nPixels
+    avgA /= nPixels
+    rgba(avgR, avgG, avgB, avgA)
+
+  }
 
 
 

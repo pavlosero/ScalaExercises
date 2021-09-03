@@ -12,7 +12,7 @@ object VerticalBoxBlurRunner:
   ) withWarmer(Warmer.Default())
 
   def main(args: Array[String]): Unit =
-    val radius = 3
+    val radius = 9
     val width = 1920
     val height = 1080
     val src = Img(width, height)
@@ -22,7 +22,7 @@ object VerticalBoxBlurRunner:
     }
     println(s"sequential blur time: $seqtime")
 
-    val numTasks = 32
+    val numTasks = 60
     val partime = standardConfig measure {
       VerticalBoxBlur.parBlur(src, dst, numTasks, radius)
     }
@@ -52,9 +52,7 @@ object VerticalBoxBlur extends VerticalBoxBlurInterface:
    */
   def parBlur(src: Img, dst: Img, numTasks: Int, radius: Int): Unit =
     val step = src.width/numTasks
-    val splittingPoints = (0 until src.width by step)
-    val intervals = splittingPoints.zip(splittingPoints.map(_+step))
+    val splittingPoints = if(step != 0 ) (0 until src.width by step) else (0 until src.width)
+    val intervals = splittingPoints.zip(splittingPoints.map(point => if (point+step<src.width) point+step else src.width))
     val tasks = for ((start,end) <- intervals) yield task {blur(src, dst, start, end, radius)}
     for (task <- tasks) task.join
-
-
