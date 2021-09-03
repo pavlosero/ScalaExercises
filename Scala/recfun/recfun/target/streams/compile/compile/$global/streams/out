@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0mD:\Studying\Coursera\Scala\recfun\recfun\src\main\scala\recfun\RecFun.scala:32:24: comparing values of types Char and String using `==` will always yield false[0m
+[0m[[0m[33mwarn[0m] [0m[0m      else if (cc.head == "(") balancedAcc(cc.tail, counter+1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Studying\Coursera\Scala\recfun\recfun\src\main\scala\recfun\RecFun.scala:33:24: comparing values of types Char and String using `==` will always yield false[0m
+[0m[[0m[33mwarn[0m] [0m[0m      else if (cc.head == ")") balancedAcc(cc.tail, counter-1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

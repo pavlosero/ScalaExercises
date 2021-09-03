@@ -1,0 +1,30 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector()[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for com.novocode.junit.JUnitFramework produced 1 initial tasks for 1 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(funsets.FunSetSuite, sbt.ForkMain$AnnotatedFingerscan@22e34913, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mmap contains only elements results of apply function f[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mmap contains only elements results of apply function f[0m finished, took 0.075 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mexists is true iff there is at least one element in set satisfying predicate[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mexists is true iff there is at least one element in set satisfying predicate[0m finished, took 0.008 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36msingleton set one contains one[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36msingleton set one contains one[0m finished, took 0.003 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mdiff contains only elements of 1st set but not of the 2nd[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mdiff contains only elements of 1st set but not of the 2nd[0m finished, took 0.005 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36munion contains all elements of each set[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36munion contains all elements of each set[0m finished, took 0.003 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mintesection contains only elements belonging to both sets[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mintesection contains only elements belonging to both sets[0m finished, took 0.002 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mforall is true iff every element in set satisfy predicate[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mforall is true iff every element in set satisfy predicate[0m finished, took 0.003 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mcontains is implemented[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mcontains is implemented[0m finished, took 0.001 sec[0m
+[0m[[0m[0minfo[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mfilter contains only elements of set that satisfy a predicate[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest funsets.[33mFunSetSuite[0m.[36mfilter contains only elements of set that satisfy a predicate[0m finished, took 0.003 sec[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 9 total, 0.164s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 9 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0mSummary for JUnit not available.[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 9, Failed 0, Errors 0, Passed 9[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	funsets.FunSetSuite[0m
